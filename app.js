@@ -34,7 +34,7 @@ $(document).ready(()=>{
         AnimationsInit();
         setTimeout(() => {
             $(document).scrollTop(0);
-
+            
             $(".loader").fadeOut();
         }, 1500);
     }, 1000);
@@ -129,3 +129,13 @@ function logoSwitch () {
   $(document).scroll(function() {logoSwitch();});
   
   logoSwitch();
+
+let h = window.innerHeight;
+setInterval(()=>{
+    if(h != window.innerHeight){
+        $('.with-whitelogo').css('margin-top',`${h-window.innerHeight}px`);
+        logoSwitch();
+    }else{
+        $('.with-whitelogo').css('margin-top','unset');
+    }
+})

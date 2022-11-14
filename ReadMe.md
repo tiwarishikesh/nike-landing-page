@@ -28,6 +28,21 @@ let zoomRatio = Math.max($(window).width() / $(".ipad").width(), $(window).heigh
 Choose the greater of the ratios so that the screen is covered both by width adn height.
 1.1x is done so that the border of iPad overflows as well
 
+```
+const tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".landing-section",
+        start: "-20vh top",
+        end: "bottom bottom",
+        scrub: true,
+        toggleActions: "play reverse play reverse"
+    }
+});
+tl
+    .to('.ipad', { scale: 1, duration: 0.4, stagger: 0.1, ease: Power2.inOut });    
+```
+The iPad scales down to original size
+
 
 ```
 $('.with-whitelogo').css('top',$('.ipad').offset().top + $('.ipad').height() - $('.with-whitelogo').offset().top);
@@ -36,27 +51,25 @@ Place the section right below the iPad div bottom
 
 
 ```
+let h = window.innerHeight;
+setInterval(()=>{
+    if(h != window.innerHeight){
+        $('.with-whitelogo').css('margin-top',`${h-window.innerHeight}px`);
+        logoSwitch();
+    }else{
+        $('.with-whitelogo').css('margin-top','unset');
+    }
+})
+```
+When mobile browser scrolls it doesn't fire resize event so we listen to changes manually and adjust section 
+
+
+```
 var distance = $('.startLogo').offset().top - $('.altLogo').closest('.row').offset().top;
 $(".altLogo").css('transform',`translate3d(${horizontalOffset}px, ${distance}px, 0px)`);
 ```
 Reveal the logo as the section moves upward
 
-
-```
-const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".landing-section",
-            start: "-20vh top",
-            end: "bottom bottom",
-            scrub: true,
-            toggleActions: "play reverse play reverse"
-        }
-    });
-    tl
-        .to('.ipad', { scale: 1, duration: 0.4, stagger: 0.1, ease: Power2.inOut });    
-```
-
-The iPad scales down to original size
 
 
 For more information:
