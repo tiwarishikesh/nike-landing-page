@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400&display=swap');
+
+body{
+    position: relative;
+    width:100vw;
+    overflow-x: hidden;
+}
+
+.w-full{
+    width:100%;
+}
+
+.p-0{
+    padding:0;
+}
+
+
+app{
+    display: block;
+    height: 100vh;
+    width:100vw;
+    overflow-y:scroll ;
+    position: fixed;
+    left:0;
+    top:0;
+}
+
+.landing-section{
+    height:150vh;
+    position: relative;
+    overflow:hidden;
+}
+
+.landing-single-slide{
+    width:100vw;
+    height:100vh;
+    position: relative;
+}
+
+h1,h2,h3,h4,h5,h6,p,a{
+    font-family: 'Roboto Condensed';
+    color:white
+}
+
+.glow {
+    letter-spacing: 5px;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+    font-weight:100;
+    font-family: 'Roboto';
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      letter-spacing: 5px;
+      text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #005ce6, 0 0 8px #0023e6, 0 0 10px #0051e6, 0 0 12px #005ce6, 0 0 14px #005ce6;
+    }
+    
+    to {
+    letter-spacing: 5.2px;
+      text-shadow: 0 0 4px #fff, 0 0 6px #4d85ff, 0 0 8px #4d9aff, 0 0 10px #4d85ff, 0 0 12px #4d7fff, 0 0 14px #4d7fff, 0 0 16px #4d77ff;
+    }
+  }
+
+.startLogo{
+    opacity:-0.25
+}
+
+@media screen and (max-width:650px) {
+    .ipad{
+        width:80vw !important;
+    }
+}
+
+
+@media screen and (max-width:450px) {
+    .ipad{
+        width:90vw !important;
+    }
+}
+
+#ecomm-wrapper{
+    margin-top:40vh;
+}
+
+.col-sm-4{
+    opacity:0;
+    top:25px;
+}
+
+.col-sm-4:nth-child(2){
+    top:75px;
+}
+
+.col-sm-4:nth-child(3){
+    top:125px;
+}
+
+
+
+body {
+  scrollbar-color: var(--scroll-thumb-color, grey) var(--scroll-track, transparent);
+  scrollbar-width: thin;
+}
+body::-webkit-scrollbar {
+  width: var(--scroll-size, 10px);
+  height: var(--scroll-size, 10px);
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--scroll-track, transparent);
+  border-radius: var(--scroll-track-radius, var(--scroll-radius));
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color, grey);
+  background-image: var(--scroll-thumb, none);
+  border-radius: var(--scroll-thumb-radius, var(--scroll-radius));
+}
+body {
+  --scroll-size: 10px;
+  --scroll-radius: 10px;
+  --scroll-track: rgb(0 0 0 / 40%);
+  --scroll-thumb-color: #dfdfdf;
+}
+body {
+  --scroll-size: 8px;
+  --scroll-radius: 10px;
+  --scroll-track: rgb(255 255 255 / 10%);
+  --scroll-thumb-color: rgb(96 139 170);
+}
+
+.row {
+    min-height:35vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .logo {
+    top:0px;
+    width: 300px;
+    cursor: pointer;
+    transform: translate3d(0,0,0);
+    -webkit-transform-style: preserve-3d;
+  }
+  /*.logo:hover {
+    filter: drop-shadow(0px 4px 6px #191919);
+    transform: translate(0, -2px);
+    transition: all, .3s ease-out;
+  }*/
+  .startLogo {
+    position: fixed;
+    top:0px;
+    transform: translate3d(0,0,0);
+    
+  }
+  
+  .altLogo {
+    position: absolute;
+    top:0px;
+    transform: translate3d(0,0,0);
+  }
+  .startLogo:active{
+      animation: repaint 1ms;
+  }
+  
+  @-webkit-keyframes repaint {
+  
+      from {
+          width: 99.9%;
+      }
+      to {
+          width: 100%;
+      }
+  
+  }
+  
+  @-moz-keyframes repaint {
+  
+      from {
+          width: 99.9%;
+      }
+      to {
+          width: 100%;
+      }
+  
+  }
+  
+  @keyframes repaint {
+  
+      from {
+          width: 99.9%;
+      }
+      to {
+          width: 100%;
+      }
+  
+  }
+  
+  .repaint {
+      -webkit-animation: repaint 100ms;
+         -moz-animation: repaint 100ms;
+          -ms-animation: repaint 100ms;
+              animation: repaint 100ms;
+  }
